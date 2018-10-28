@@ -3,6 +3,7 @@ import { NavController,AlertController, ToastController } from 'ionic-angular';
 import { TareaProvider } from '../../providers/tarea/tarea';
 import { TareasArchivadasPage } from '../tareas-archivadas/tareas-archivadas';
 import { TareaHttpProvider } from '../../providers/tarea-http/tarea-http';
+import { LoginPage } from '../login/login';
 
 @Component({
   selector: 'page-home',
@@ -108,6 +109,11 @@ export class HomePage {
       }
     );
     
+  }
+
+  cerrarSesion(){
+    localStorage.removeItem('jwt');
+    this.navCtrl.setRoot(LoginPage);
   }
 
 
